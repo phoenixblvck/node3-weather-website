@@ -8,7 +8,7 @@ const forecast = (lat, long, callback) =>{
         } else if(body.error){
             callback(body.error);
         }else{
-            callback(undefined, body.daily.data[0].summary+' It is currently '+body.currently.temperature+" degree out. There is a "+ body.currently.precipProbability+"% chance of rain.");
+            callback(undefined, body.daily.data[0].summary+' It is currently '+body.currently.temperature+" degree out. There is a "+ body.currently.precipProbability+"% chance of rain. The maximum temperature for the day is "+body.daily.data[0].temperatureMax+" degrees and the minimum temperature for the day is "+body.daily.data[0].temperatureMin+" degrees.");
         }
     });
 }
